@@ -2,6 +2,7 @@
 
 - [x] [首页](./menu.md)
 - [x] [test](./test.md)
+- [x] [js测试](./jquerytest.html)
 
 You can use the [editor on GitHub](https://github.com/everforcc/everforcc.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 

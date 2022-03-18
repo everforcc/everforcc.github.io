@@ -1,0 +1,17 @@
+---
+layout: default
+title: "liquid语法测试"
+date:   2022-03-17 12:50:01
+category: blog
+excerpt: 码值
+author: dave
+---
+
+## liquid语法测试
+
+- [官方文档](https://shopify.github.io/liquid/basics/introduction/)
+
+<p>
+1. '{{}}' 取数据 看源码，没找到文档如何转义
+</p>
+

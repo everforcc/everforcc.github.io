@@ -1,0 +1,24 @@
+---
+layout: default
+title: "Jekyll-常用的kv"
+date:   2022-03-17 12:50:00
+category: blog
+excerpt: 码值
+author: dave
+---
+
+## 常见的码值记录
+
+### 1. [可用的 Liquid 属性](https://jekyllcn.com/docs/pagination/#%E5%8F%AF%E7%94%A8%E7%9A%84-liquid-%E5%B1%9E%E6%80%A7)
+
+分页功能插件使得 paginator liquid 对象具有下列属性：
+
+| paginator. | 分也使用 |
+|:--------|:-------:|
+| page | 当前页码 |
+
+
+### 2. site
+
+全站属性配置在_config.yml中
+

@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "01. 目录和常用的命令"
+date:   2022-03-17 12:13:01
+category: 分类a
+excerpt: 简介个性化
+author: dave
+---
+
+<p>
+jekyll-grammar 简单介绍基础信息
+</p>
+
+# 一
+### 三
+###### 六
+
+## 一. 目录
+
+~~~
+.
+├── _config.yml
+├── _data
+|   └── data_1.markdown
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _site
+├── .jekyll-metadata
+└── index.html
+~~~
+
+## 二. 命令
+
+~~~
+# 清缓存
+jekyll clean
+# 构建
+jekyll build
+# 发布
+jekyll serve
+~~~

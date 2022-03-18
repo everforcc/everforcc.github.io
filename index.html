@@ -1,0 +1,89 @@
+---
+layout: default
+title: My Blog
+---
+
+<!-- 遍历分页后的文章 -->
+{% for post in paginator.posts %}
+<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+<p class="author">
+  <span class="date">{{ post.date }}</span>
+</p>
+<div class="content">
+  暂时不显示内容,随后调整为简介
+  <!--{{ post.content }}-->
+</div>
+{% endfor %}
+
+<!-- 分页链接 -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+
+  <!--<em> -&#45;&#45; paginator.total_pages: {{paginator.total_pages}}</em>
+  <br><br>
+  <em> -&#45;&#45; paginator.previous_page: {{paginator.previous_page}}</em>
+  <br><br>
+  <em> -&#45;&#45;  |: {{paginator.previous_page_path | prepend: 'abc'}}</em>
+  <br><br>
+  <em> -&#45;&#45; paginator.previous_page_path: {{paginator.previous_page_path}}</em>
+  <br><br>
+  <em> -&#45;&#45; site.paginate_path: {{site.paginate_path}}</em>
+  <br><br>
+  <em> -&#45;&#45; site.baseurl: {{site.baseurl}}</em>
+  <br><br>-->
+
+
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a>
+  {% else %}
+  <span>&laquo; 上一页</span>
+  {% endif %}
+  <!-- 上一页 -->
+
+  {% for page in (1..paginator.total_pages) %}
+
+  <!--<br><br>
+  <em> -&#45;&#45; 当前页: {{ page }}</em>-->
+
+  <!-- 1. paginator.page获取当前页，如果是当前页，只显示文字 -->
+  {% if page == paginator.page %}
+  <!--<br><br>-->
+  <em>{{ page }}</em>
+
+  <!-- 2. 如果是第一页，则处理数据，删除page1 -->
+  {% elsif page == 1 %}
+  <!-- 单独处理page=1 的时候 -->
+
+  <!--<br><br>
+  <em> 如果是第一页 start</em>
+  <br>
+  <em> -&#45;&#45; 数据测试00: {{page}}</em>
+  <br>
+  <em> -&#45;&#45; 数据测试01: {{paginator.previous_page_path | prepend: site.baseurl}}</em>
+  <br>
+  <em> -&#45;&#45; 数据测试02: {{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}</em>
+  <br>
+  <em> 如果是第一页 end</em>
+  &lt;!&ndash; 此处问题，不论任何情况,都只需要baseurl &ndash;&gt;
+  <br><br>-->
+
+  <!-- 或者也可以site.baseurl 定义一下 -->
+  <!--<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>-->
+  <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+
+  <!-- 3. 如果不是本页，也不是第一页，则正常显示 -->
+  {% else %}
+  <!--<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>-->
+  <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+
+  {% endif %}
+  {% endfor %}
+
+  <!-- 下一页 -->
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &raquo;</a>
+  {% else %}
+  <span>下一页 &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
